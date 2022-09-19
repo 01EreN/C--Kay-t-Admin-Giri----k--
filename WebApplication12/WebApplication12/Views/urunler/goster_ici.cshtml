@@ -1,0 +1,9 @@
+﻿@model List<WebApplication12.Models.Kategori>
+
+
+@foreach (var item in Model)
+{
+    <a href="~/urunler/goster/?id=@item.kategoriID"> @item.katagoriismi;</a>
+    <br />
+    <img src="~/img/@item.resim" width="75" height="75" />
+}

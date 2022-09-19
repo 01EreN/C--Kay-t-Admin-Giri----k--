@@ -1,0 +1,8 @@
+﻿@model List<WebApplication12.Models.Kategori>
+
+
+@foreach (var item in Model)
+{
+    <a href="~/urunler/goster/?id=@item.kategoriID"> @item.katagoriismi;</a>
+    <br />
+}

@@ -1,0 +1,27 @@
+﻿<body>
+    @ViewBag.mesaj
+    <br />
+    <br />
+    <center>
+        <div class="container">
+            <div class="row">
+                <form action="~/urunler/login" method="post" enctype="multipart/form-data">
+                    <h4>Giriş Yap</h4>
+                    <div class="col-md-4">
+                        <div class="mb-1">
+                            <b>Kullanıcı Adı Giriniz</b>
+                            <input type="text" name="isim" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        </div>
+                        <br />
+                        <div class="mb-1">
+                            <b>Şifrenizi Giriniz</b>
+                            <input type="text" name="sifre" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp">
+                        </div>
+                        <br />
+                        <button type="submit" class="btn btn-warning">giris yap</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </center>
+</body>

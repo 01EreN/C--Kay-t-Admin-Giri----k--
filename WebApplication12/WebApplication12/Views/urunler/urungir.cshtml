@@ -1,0 +1,131 @@
+﻿@model WebApplication12.Models.urunler
+
+<body>
+
+    @using (Html.BeginForm("urungir", "urunler", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div style="margin-left:450px">
+            <b>
+                @ViewBag.mesajim
+            </b>
+
+            <br />
+            <br />
+            <div class="row mb-2">
+                <div class="col-md-6">
+                    @Html.LabelFor(a => a.urunismi)
+                    <br />
+                    @Html.TextBoxFor(a => a.urunismi)
+                    @Html.ValidationMessageFor(a => a.urunismi)
+                </div>
+                <br />
+                <div class="col-md-6">
+                    @Html.LabelFor(a => a.en)
+                    <br />
+                    @Html.TextBoxFor(a => a.en)
+                    @Html.ValidationMessageFor(a => a.en)
+                </div>
+                <br />
+                <div class="col-md-6">
+                    @Html.LabelFor(a => a.boy)
+                    <br />
+                    @Html.TextBoxFor(a => a.boy)
+                    @Html.ValidationMessageFor(a => a.boy)
+                </div>
+                <br />
+                <div class="col-md-6">
+                    @Html.LabelFor(a => a.adet)
+                    <br />
+                    @Html.TextBoxFor(a => a.adet)
+                    @Html.ValidationMessageFor(a => a.adet)
+                </div>
+                <br />
+                <div class="col-md-6">
+                    @Html.LabelFor(a => a.fiyat)
+                    <br />
+                    @Html.TextBoxFor(a => a.fiyat)
+                    @Html.ValidationMessageFor(a => a.fiyat)
+                </div>
+                <br />
+                <div class="col-md-6">
+                    @Html.LabelFor(a => a.renk)
+                    <br />
+                    @Html.TextBoxFor(a => a.renk)
+                    @Html.ValidationMessageFor(a => a.renk)
+                </div>
+                <br />
+                <div class="col-md-6">
+                    @Html.LabelFor(a => a.urunkodu)
+                    <br />
+                    @Html.TextBoxFor(a => a.urunkodu)
+                    @Html.ValidationMessageFor(a => a.urunkodu)
+                </div>
+                <br />
+
+
+            </div>
+
+
+            @Html.DropDownList("urunveri", ViewBag.uruncanta as SelectList, "Kategori Seç", new { @class = "btn btn-danger dropdown-toggle" })
+            <br />
+            <input type="file" name="resim" />
+            <br />
+            <input type="submit" value="Gönder" />
+        </div>
+    }
+</body>
+
+@*<body>
+        <center>
+            <div class="container">
+                <div class="row">
+                    <h2>Kayit Giriniz</h2>
+                    <form action="~/urunler/urungir" method="post" enctype="multipart/form-data">
+                        <div class="col-md-4">
+                            <div class="mb-1">
+                                <label for="exampleInputEmail1" class="form-label"><b>Ürün Adı</b></label>
+                                <input type="hidden" name="urunID" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                <input type="text" name="urunismi" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                <div id="emailHelp" class="form-text"></div>
+                            </div>
+                            <div class="mb-1">
+                                <label for="exampleInputEmail1" class="form-label"><b>Eni</b></label>
+                                <input type="text" name="en" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                <div id="emailHelp" class="form-text"></div>
+                            </div>
+                            <div class="mb-1">
+                                <label for="exampleInputEmail1" class="form-label"><b>Boyu</b></label>
+                                <input type="text" name="boy" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                <div id="emailHelp" class="form-text"></div>
+                            </div>
+                            <div class="mb-1">
+                                <label for="exampleInputEmail1" class="form-label"><b>Fiyatı</b></label>
+                                <input type="text" name="fiyat" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                <div id="emailHelp" class="form-text"></div>
+                            </div>
+                            <div class="mb-1">
+                                <label for="exampleInputEmail1" class="form-label"><b>Ürün Kodu Giriniz</b></label>
+                                <input type="text" name="urunkodu" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                <div id="emailHelp" class="form-text"></div>
+                            </div>
+                            <div class="mb-1">
+                                <label for="exampleInputEmail1" class="form-label"><b>renk Giriniz</b></label>
+                                <input type="text" name="renk" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                <div id="emailHelp" class="form-text"></div>
+                            </div>
+                            <div class="mb-1">
+                                <label for="exampleInputEmail1" class="form-label"><b>Resim giriniz</b></label>
+                                <input type="file" name="resim" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                <div id="emailHelp" class="form-text"></div>
+                            </div>
+                            @Html.DropDownList("dropdownveri", ViewBag.depart as SelectList, "Kategori Seç", new { @class = "btn btn-primary dropdown-toggle" })
+                        </div>
+                        <br />
+                        <button type="submit" class="btn btn-warning">Kaydet</button>
+                    </form>
+                </div>
+            </div>
+
+        </center>
+    </body>*@
+

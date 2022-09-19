@@ -1,0 +1,53 @@
+﻿@model List<WebApplication12.Models.urunler>
+
+
+<body>
+    <div class="row">
+        <div class="col-3 col-md-3">
+            <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;">
+                <svg width="40" height="32"><use xlink:href="#bootstrap" /></svg>
+                <span class="fs-4">Kulllanıcı Adı</span>
+                <hr>
+                <a><h5>@Html.Action("goster_ici")</h5></a>
+                <hr>
+            </div>
+        </div>
+
+        @if (Model != null)
+        {
+
+            foreach (var item in Model)
+            {
+                <div class="col-8 col-md-4">
+                    <div class="card" style="width: 18rem; margin:5px; background-color:black;">
+                        <img src="~/img/@item.resim" class="card-img-top" style="height:200px; width:280px;" alt="...">
+                        <div class="card-body" style="color:grey">
+                            <h5 class="card-subtitle mb-2 text-6muted"><b>Ürün Adı = </b>@item.urunismi</h5>
+
+                            <h6 class="card-subtitle mb-2 text-muted"><b>Ürün Fiyatı = </b>@item.fiyat</h6>
+                            <h6 class="card-subtitle mb-2 text-muted"><b>Ürün Eni = </b>@item.en</h6>
+                            <h6 class="card-subtitle mb-2 text-muted"><b>Ürün Boyu = </b>@item.boy</h6>
+                            <h6 class="card-subtitle mb-2 text-muted"><b>Ürün Kodu = </b>@item.urunkodu</h6>
+                            <h6 class="card-subtitle mb-2 text-muted"><b>Ürün Rengi = </b>@item.renk</h6>
+                            <h6>Adet</h6>
+                            <form action="~/urunler/sepet_ekle" method="post" enctype="multipart/form-data">
+                                <input type="hidden" name="id" value="@item.urunID" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                <input type="text" name="adet" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                <br />
+                                <button type="submit" class="btn btn-success">Sepete Ekle </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+
+        <div class="col-4 col-md-3">
+            @Html.Action("sepet_ici")
+
+        </div>
+
+    </div>
+
+</body>
+

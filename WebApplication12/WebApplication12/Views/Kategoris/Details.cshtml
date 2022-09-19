@@ -1,0 +1,30 @@
+﻿@model WebApplication12.Models.Kategori
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Kategori</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.katagoriismi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.katagoriismi)
+        </dd>
+    </dl>
+    <div class="mb-1">
+        <label for="exampleInputEmail1" class="form-label"><b>Resim giriniz</b></label>
+        <input type="file" name="resim" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text"></div>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.kategoriID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

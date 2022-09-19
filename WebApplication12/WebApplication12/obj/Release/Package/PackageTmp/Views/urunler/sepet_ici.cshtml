@@ -1,0 +1,83 @@
+﻿@model IEnumerable<WebApplication12.Models.sepet>
+
+
+<h2>TAKIM LİSTESİ</h2>
+
+<table class="table table-bordered table-striped" style="margin-left:5px">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.urunismi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.en)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.boy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.adet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fiyat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.renk)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.urunkodu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.toplam)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.kategoriID)
+        </th>
+        <th>
+            Resim
+        </th>
+        <th>
+            Sil
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <th>
+        @Html.DisplayFor(model => item.urunismi)
+    </th>
+    <th>
+        @Html.DisplayFor(model => item.en)
+    </th>                         
+    <th>                        
+        @Html.DisplayFor(model => item.boy)
+    </th>                         
+    <th>                          
+        @Html.DisplayFor(model => item.adet)
+    </th>                         
+    <th>                         
+        @Html.DisplayFor(model => item.fiyat)
+    </th>                         
+    <th>                          
+        @Html.DisplayFor(model => item.renk)
+    </th>                         
+    <th>                          
+        @Html.DisplayFor(model => item.urunkodu)
+    </th>                         
+    <th>                          
+        @Html.DisplayFor(model => item.toplam)
+    </th>                         
+    <th>                          
+        @Html.DisplayFor(model => item.kategoriID)
+    </th>
+    <td>
+        <img src="~/img/@item.resim" width="75" height="75" />
+    </td>
+    <td>
+        @Html.ActionLink("Sil", "sepet_sil", new { id = item.kategoriID })
+    </td>
+</tr>
+    }
+
+</table>
+<h2>Toplam = @ViewBag.toplam </h2>
